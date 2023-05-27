@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>practice.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="1-uzair-hussain">1. Uzair Hussain</h1>
+<p><img src="uzairs.JPG" alt="Uzair Hussain"></p>
+<h4 id="2-i-am-data-science-enthusiastic">2.  I am data science enthusiastic</h4>
+<h1 id="table-of-content">Table of content</h1>
+<p><a href="#1-uzair-hussain">1. Intro</a><br>
+<a href="#2-i-am-data-science-enthusiastic">2. Tagline</a><br>
+<a href="#3-block-or-quotes">3. Quotes</a><br>
+<a href="#4-line-breaks">4. Line breaks</a><br>
+<a href="#5-combine-two-things">5. Combining two things</a><br>
+<a href="#6-heading-2">6. Headings</a><br>
+<a href="#7-face-of-text">7. Text Face</a><br>
+<a href="#8-bullets-list">8. Bullets List</a><br>
+<a href="#9-line-break-or-page-break">9. Line or Page Break</a><br>
+<a href="#10-links-and-hyper-links">10. Hyper Links</a><br>
+<a href="#11-images-with-links">11. Images with links</a><br>
+<a href="#12-adding-code-or-block-of-code">12. Block of Code</a><br>
+<a href="#13-adding-tables">13. Adding Tables</a><br>
+<a href="#15-install-extension">14. Table of extensions</a></p>
+<h1 id="3-block-or-quotes">3. Block or Quotes</h1>
+<blockquote>
+<p>Never Die Attitude, alwas wins!<br>
+yes it is!</p>
+</blockquote>
+<h1 id="4-line-breaks">4. line breaks</h1>
+<p>this is</p>
+<p>uzair hussain</p>
+<p>or software engineer\
+in muet</p>
+<h1 id="5-combine-two-things">5. combine two things</h1>
+<p>block of words</p>
+<blockquote>
+<h2 id="6-heading-2">6. heading 2</h2>
+</blockquote>
+<h1 id="7-face-of-text">7.  face of text</h1>
+<p><strong>bold</strong></p>
+<p><em>italic</em></p>
+<p><em><strong>bold and italic</strong></em></p>
+<p>or you can use these symbols</p>
+<p>_(under score)</p>
+<p><strong>bold</strong></p>
+<p><em>italic</em></p>
+<p><em><strong>bold and italic</strong></em></p>
+<h1 id="8-bullets-list">8. bullets /list</h1>
+<ul>
+<li>mon</li>
+<li>tue</li>
+<li>wed</li>
+<li>thurs</li>
+<li>fri
+<ul>
+<li>fri 1
+<ul>
+<li>anything
+<ul>
+<li>sublist</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>fri 2</li>
+</ul>
+</li>
+<li>sat</li>
+<li>sun</li>
+</ul>
+<ol>
+<li>day 1
+<ol>
+<li>day 1a</li>
+<li>day 1b
+<ol>
+<li>day 1b a</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>day 2</li>
+<li>day 3</li>
+<li>day 4</li>
+<li>day 5</li>
+<li>day 6</li>
+<li>day 7</li>
+</ol>
+<p><strong>using * or +</strong></p>
+<ul>
+<li>one</li>
+<li>two</li>
+<li>three</li>
+</ul>
+<ul>
+<li>five</li>
+<li>six</li>
+<li>seven</li>
+<li>eight</li>
+</ul>
+<h1 id="9-line-break-or-page-break">9. line break or page break</h1>
+<p>this is page 1.</p>
+<hr>
+<p>this is page 2.</p>
+<hr>
+<p>this is page 3.</p>
+<hr>
+<p>this is page 4.</p>
+<h1 id="10-links-and-hyper-links">10. links and hyper links</h1>
+<p><a href="uzairhussain.tech">portfolio website</a></p>
+<p><a href="https://uzairhussain.tech/">https://uzairhussain.tech/</a></p>
+<p>this website link is <a href="web">here</a></p>
+<h1 id="11-images-with-links">11.  images with links</h1>
+<p>to join this course please scan the following QR code.</p>
+<p><img src="uzairh.png" alt="QR"></p>
+<p><strong>Online pictudre ka link</strong></p>
+<p><img src="uzairs.JPG" alt="Uzair"></p>
+<h1 id="12-adding-code-or-block-of-code">12. adding code or block of code</h1>
+<p>to print string use <code>print [Uzair]</code></p>
+<p><code>print Hello Uzair</code></p>
+<p><strong>block of code below</strong></p>
+<blockquote>
+<p>python</p>
+</blockquote>
+<pre class="hljs"><code><div>x=<span class="hljs-number">4</span>
+y=<span class="hljs-number">2</span>
+print(x+y)
+</div></code></pre>
+<blockquote>
+<p>java</p>
+</blockquote>
+<pre class="hljs"><code><div>system.out.println(<span class="hljs-string">"Hello Uzair"</span>)
+</div></code></pre>
+<blockquote>
+<p>c++</p>
+</blockquote>
+<pre class="hljs"><code><div><span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"Hello"</span>;
+</div></code></pre>
+<h1 id="13-adding-tables">13. adding tables</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">species</th>
+<th style="text-align:center">petal_length</th>
+<th style="text-align:center">Sepal_length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">abs</td>
+<td style="text-align:center">pakistan</td>
+<td style="text-align:center">zindabad</td>
+</tr>
+<tr>
+<td style="text-align:center">abs</td>
+<td style="text-align:center">india</td>
+<td style="text-align:center">hrf</td>
+</tr>
+<tr>
+<td style="text-align:center">abs</td>
+<td style="text-align:center">ban</td>
+<td style="text-align:center">grsgd</td>
+</tr>
+<tr>
+<td style="text-align:center">abs</td>
+<td style="text-align:center">virsigia</td>
+<td style="text-align:center">dgsgd</td>
+</tr>
+<tr>
+<td style="text-align:center">abs</td>
+<td style="text-align:center">khan</td>
+<td style="text-align:center">dgsg</td>
+</tr>
+<tr>
+<td style="text-align:center">abs</td>
+<td style="text-align:center">zia</td>
+<td style="text-align:center">gsd</td>
+</tr>
+<tr>
+<td style="text-align:center">abs</td>
+<td style="text-align:center">pppp</td>
+<td style="text-align:center">dgs</td>
+</tr>
+</tbody>
+</table>
+<h1 id="14-install-extension">14. install extension</h1>
+<p><a href="uzairhussain.tech">Link</a>
+<img src="uzairh.png" alt="image"></p>
+<pre class="hljs"><code><div>print(&quot;Uzair&quot;)
+</div></code></pre>
+<table>
+<thead>
+<tr>
+<th>Column A</th>
+<th>Column B</th>
+<th>Column C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td>B1</td>
+<td>C1</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>B2</td>
+<td>C2</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>B3</td>
+<td>C3</td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>

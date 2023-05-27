@@ -1,17 +1,35 @@
-# Uzair Hussain 
+# 1. Uzair Hussain 
 
 ![Uzair Hussain](uzairs.JPG)
 
-#### I am data science enthusiastic
+#### 2.  I am data science enthusiastic
 
 
-# Block or Quotes
+
+# Table of content 
+
+[1. Intro](#1-uzair-hussain)\
+[2. Tagline](#2-i-am-data-science-enthusiastic)\
+[3. Quotes](#3-block-or-quotes)\
+[4. Line breaks](#4-line-breaks)\
+[5. Combining two things](#5-combine-two-things)\
+[6. Headings](#6-heading-2)\
+[7. Text Face](#7-face-of-text)\
+[8. Bullets List](#8-bullets-list)\
+[9. Line or Page Break](#9-line-break-or-page-break)\
+[10. Hyper Links](#10-links-and-hyper-links)\
+[11. Images with links](#11-images-with-links)\
+[12. Block of Code](#12-adding-code-or-block-of-code)\
+[13. Adding Tables](#13-adding-tables)\
+[14. Table of extensions](#15-install-extension)
+
+# 3. Block or Quotes
 
 > Never Die Attitude, alwas wins!\
   > yes it is!
 
 
-# line breaks
+# 4. line breaks
 
 this is
 
@@ -20,13 +38,13 @@ uzair hussain
 or software engineer\ 
 in muet
 
-# combine two things
+# 5. combine two things
 block of words 
-> ## heading 2
+> ## 6. heading 2
 
 
 
-# face of text
+# 7.  face of text
 
 **bold**
 
@@ -44,7 +62,7 @@ _italic_
 
 ___bold and italic___
 
-# bullets /list
+# 8. bullets /list
 
 - mon
 - tue
@@ -82,7 +100,7 @@ __using * or +__
 + eight
 
 
-# line break or page break
+# 9. line break or page break
 
 this is page 1.
 
@@ -93,7 +111,7 @@ this is page 3.
 ***
 this is page 4.
 
-# links and hyper links
+# 10. links and hyper links
 
 [portfolio website](uzairhussain.tech)
 
@@ -104,7 +122,7 @@ this is page 4.
 
 this website link is [here](web )
 
-# images with links
+# 11.  images with links
 
 to join this course please scan the following QR code.
 
@@ -116,18 +134,56 @@ to join this course please scan the following QR code.
 **Online pictudre ka link**
 
 
-![Uzair](https://www.google.com/search?rlz=1C1GCEA_enRO992PK1037&sxsrf=APwXEdfsN-4DFS2xGa_vOMBq-3FPQ3jlyA:1685180384219&q=uzair+hussain&tbm=isch&source=univ&fir=8FgSaWbYRw_C5M%252CBSy8e8HWSp4zHM%252C_%253B8-3Bclq59COdBM%252CwbtsM-wNkC7QqM%252C_%253BpnD3Kr99F6j4jM%252CJs8RJWf2yKKZvM%252C_%253B-sGFwd_-EAux9M%252C0ECJwhROANBMHM%252C_%253BQbCauDhEzpIs3M%252Cf5voyiejIUCQsM%252C_%253BVXqr1an6ng3IWM%252C3FNt0bvF9pH91M%252C_%253BOLHW8hUYQGW6PM%252CRWVBNXDELeFYdM%252C_%253B8CgqNavavi7O6M%252CyyM6AjLI9901NM%252C_%253BVRVsEWiYt6PnPM%252CsKAZiVjHIpzScM%252C_%253Bgg8DPZdSXPVLlM%252CiUGxsiSP4X38AM%252C_%253B5LnWmNsoEDT4PM%252C0EZ6CDFnDamXgM%252C_%253B9r83vRvYyZUSTM%252CT6D6_qfsUBBDoM%252C_%253BJCFDxDVX6w64vM%252CWzZ5Z0Q6RHAjGM%252C_%253B_urPiNAu4lMCHM%252CqRZhEQ9CsRF3VM%252C_%253BmBVzBQXAE-D8MM%252CK-IaBKOpIQOyTM%252C_&usg=AI4_-kQlciN-E0m16CJ0drVlKNKSRzn7RQ&sa=X&ved=2ahUKEwiG97uRmpX_AhXgV6QEHQi3AR8Q7Al6BAgJECM&biw=681&bih=607&dpr=1#imgrc=jpYWJMUESrYWAM)
+![Uzair](uzairs.JPG)
 
-
-# adding code or block of code
+# 12. adding code or block of code
 
 to print string use `print [Uzair]`
 
 `print Hello Uzair`
 
 **block of code below**
-```
+>python
+```python
 x=4
 y=2
 print(x+y)
 ```
+>java
+```java
+system.out.println("Hello Uzair")
+```
+>c++
+```c++
+cout<<"Hello";
+```
+
+# 13. adding tables
+
+|species | petal_length | Sepal_length | 
+| :------: | :------------: | :------------: |
+| abs    | pakistan     | zindabad     |
+| abs    | india     | hrf     |
+| abs    | ban     | grsgd     |
+| abs    | virsigia     | dgsgd     |
+| abs    | khan     | dgsg     |
+| abs    | zia     | gsd     |
+| abs    | pppp     | dgs     |
+
+
+
+# 14. install extension
+
+
+[Link](uzairhussain.tech)
+![image](uzairh.png)
+
+```
+print("Uzair")
+```
+
+Column A | Column B | Column C
+---------|----------|---------
+ A1 | B1 | C1
+ A2 | B2 | C2
+ A3 | B3 | C3
